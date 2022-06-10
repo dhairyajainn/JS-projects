@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Toss Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rebeccapurple;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            height: 100px;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: rebeccapurple;
+        }
+
+        #container {
+            height: calc(100% - 100px);
+            margin-top: 30px;
+            box-sizing: border-box;
+            width: 600px;
+            border-radius: 20px;
+            border: 2px solid white;
+            padding-bottom: 20px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.493);
+        }
+
+ 
+        #msg1,   #msg2{
+            border-radius: 10px;
+            /* background-color: #fff; */
+            color: white;
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 25px;
+            margin-top: 80px;
+            margin-left: 80px;
+        }
+        span{
+            background-color: white;
+            color: rebeccapurple;
+            padding: 10px 20px;
+            border-radius:3px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.493);
+        }
+
+        .btn-container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .btn {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            color: rebeccapurple;
+            font-size: 30px;
+            border: 5px solid rebeccapurple;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.493);
+        }
+        .btn:hover{
+            background-color: rgba(149, 92, 206, 0.456);
+            color: white;
+            border: 5px solid white;
+            transform: scale(0.8);
+        }
+        @media screen and (max-width:320px) {
+
+            #msg1,
+            #msg2 {
+                font-size: 20px;
+                margin-left: 10px;
+            }
+
+            .btn {
+                width: 100px;
+                height: 100px;
+                font-size: 25px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+   
+        <h1>Coin Toss Game</h1>
+
+    
+  
+   
+</body>
+
+</html>

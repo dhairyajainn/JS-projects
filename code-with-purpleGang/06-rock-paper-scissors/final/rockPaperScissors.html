@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <header>
+         <h1>Lets Play Rock Paper Scissor</h1>
+   </header>
+    <main>
+        <div id="container">
+            <div class="message"></div>
+            <div class="details"></div>
+            <div class="btn-container">
+                <button id="btn1" type="button">Rock</button>
+                <button id="btn2" type="button">Paper</button>
+                <button id="btn3" type="button">Scissor</button>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        const message = document.querySelector('.message');
+        const details = document.querySelector('.details');
+
+        const buttons = document.querySelectorAll("button");
+
+        const selection = ['Rock', 'Paper', 'Scissor'];
+        let score = [0, 0];
+
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", guessSelection)
+        }
+
+        function guessSelection(e) {
+            let playerGuess = e.target.innerText;
+            console.log(playerGuess);
+            let computerGuess = Math.floor(Math.random() * 3);
+            // console.log(computerGuess);
+            let computerSelection = selection[computerGuess];
+            console.log(computerSelection);
+            let output;
+            if (playerGuess === 'Rock' && computerSelection === 'Paper') {
+                output = "COMPUTER WINS";
+                score[1]++;
+            }
+            else if (playerGuess === 'Paper' && computerSelection === 'Scissors') {
+                output = "COMPUTER WINS";
+                score[1]++;
+            }
+            else if (playerGuess === 'Scissor' && computerSelection === 'Rock') {
+                output = "COMPUTER WINS";
+                score[1]++;
+            }
+            else if (playerGuess === computerSelection) {
+                output = "DRAW";
+            }
+
+            else {
+                output = "Player WINS";
+                score[0]++;
+            }
+
+            message.innerHTML = "<span>"+ output +"</span>" + "<br><br> Player " + "<span>"+ score[0] +"</span>" + " Computer  " + "<span>"+ score[1]  + "</span>";
+            details.innerHTML = `Computer selected = <span> ${computerSelection}</span> <br> <br> Player selected = <span> ${playerGuess}</span>`;
+        
+            message.style.textAlign = 'center';
+            message.style.marginTop = '20px';
+ 
+            details.style.textAlign = 'center';
+            details.style.marginTop = '40px';
+        }
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

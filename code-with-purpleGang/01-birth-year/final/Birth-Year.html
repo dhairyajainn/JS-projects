@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth year</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+      
+
+        img {
+            width: 300px;
+            display: inline-block;
+        }
+
+        #container {
+            background-image: url(/images/pexels-photo-379732.jpeg);
+            background-size: cover;
+            width: 600px;
+            height: 500px;
+            border: 2px solid #ad54ec;;
+            position: absolute;
+            left: 30rem;
+            top: 50px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            position: relative;
+            top: 20px;
+            color: #ad54ec;
+            text-transform: capitalize;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+        }
+
+        #number:hover {
+            box-shadow: 1px 1px 2px 1px #ad54ec65;
+        }
+
+        input {
+            position: relative;
+            top: 150px;
+            left: 150px;
+            color: #ad54ec;
+            padding: 10px 20px;
+            border: 2px solid #ad54ec;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        input:focus{
+            outline: none;
+        }
+        #button {
+            cursor: pointer;
+            background-color: #ad54ec;
+            color: white;
+            
+        }
+       
+        #button:hover{
+            box-shadow: 1px 1px 2px 1px #ad54ec65;
+            color: #ad54ec;
+            background-color: white;
+            /* border: 2px solid #ad54ec; */
+        }
+        #year {
+            position: relative;
+            top: 13rem;
+            left: 180px;
+            color: #ad54ec;;
+            font-size: 20px;
+            line-height: 40px;
+            border: 2px solid #ad54ec;;
+            width: 200px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        #nameperson{
+            text-transform: capitalize;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <img src="images/giphy.gif"> -->
+    <!-- container start -->
+    <div id="container">
+        <h1>Find your Birth-Year</h1>
+        <form>
+            <input type="number" name="number" id="number" placeholder="Type Your Age" />
+            <input type="button" value="Find Year" id="button" />
+            <p id="year">Year Born:</p>
+        </form>
+        <p id="nameperson"></p>
+    </div>
+    <!-- container end -->
+
+
+    <script>
+        var dataname = document.getElementById('nameperson');
+        var name2 = prompt("Hi ! What is your Name?");
+        function name1() {
+            // document.getElementsByTagName('h1')[0].style.color="navajowhite";
+            // document.getElementsByTagName('h1')[0].style.color="red";
+
+            document.getElementsByTagName('h1')[0].innerHTML = name2 + "," + "<br>" + "Do you want to find your year of birth?";
+
+        }
+        name1();
+        function calculate() {
+            var number = document.getElementById("number").value;
+            if (number == " " || number == 0) {
+                alert("Please type a valid age!!");
+            }
+            var date = new Date().getFullYear();
+            var birthYear = date - number;
+            document.getElementById("year").innerHTML = "Year Born: " + birthYear;
+            document.getElementById("year").style.color = "#ad54ec";
+        }
+        document.getElementById("button").onclick = function () {
+            dataname.innerText = `${name2}`
+            dataname.style.color = 'black';
+            dataname.style.fontSize = '30px';
+            dataname.style.textAlign = 'center';
+
+            calculate();
+        };
+    </script>
+</body>
+
+</html>
